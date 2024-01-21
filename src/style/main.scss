@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+$Green: hsl(75, 94%, 57%);
+$White: hsl(0, 0%, 100%);
+$Grey: hsl(0, 0%, 20%);
+$DarkGrey: hsl(0, 0%, 12%);
+$OffBlack: hsl(0, 0%, 8%);
+
+@font-face {
+    font-family: Inter;
+    src: url(../../assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+body {
+    font-family: Inter;
+    background-color: $OffBlack;
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    
+    @media(max-width: 375px) {
+        width: 300px;
+    }
+
+    @media(min-width: 376px) {
+        width: 360px;
+    }
+
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: $DarkGrey;
+    box-sizing: border-box;
+    text-align: center;
+    color: $White;
+
+    .card-header {
+
+        .card-header-avatar {
+            width: 6rem;
+            border-radius: 50%;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .card-header-name {
+            font-size: 1.8rem;
+            margin: 0.5rem auto;
+        }
+
+        .card-header-location {
+            color: $Green;
+            margin: 0.5rem auto;
+        }
+
+        .card-header-descr {
+            margin: 1.5rem auto;
+        }
+    }
+
+    .card-body {
+
+        .card-body-contact-links {
+            margin: 0.5rem auto;
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+
+            li {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 1rem;
+                background-color: $Grey;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                transition: background-color .6s ease-in-out;
+
+                a {
+                    text-decoration: none;
+                    color: $White;
+                    font-weight: bold;
+                }
+
+                &:hover {
+                    background-color: $Green;
+                    transition: 0.6s;
+                    
+                    a {
+                        color: $OffBlack;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
